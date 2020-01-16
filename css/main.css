@@ -1,0 +1,145 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.sidebar {
+    width: 20vw;
+    height: 100vh;
+    background: #171717;
+    color:#ddd;
+    position:absolute;
+    left: 0;
+    top: 0;
+}
+
+.pane {
+    padding-left: 20vw;
+    width: 100vw;
+    height: 100vh;
+    display:none;
+}
+
+.pane.active {
+    display: block;
+}
+
+.pane .title:not(.home-title) {
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    padding: 1em 0;
+    text-align:center;
+    text-transform:uppercase;
+}
+
+.brand {
+    font-weight: normal;
+    font-size: 2rem;
+    text-align:center;
+    padding: 2em 0;
+}
+
+.nav-list {
+    width:100%;
+    list-style: none;
+}
+.nav-item {
+    text-align:right;
+    text-transform:uppercase;
+    padding-right: 30px;
+    border-left: 3.5px solid transparent;
+    height:50px;
+    line-height: 50px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: .3s ease-in-out;
+}
+.nav-item:not(:first-of-type) {
+    margin-top: 10px;
+}
+.nav-item:not(.active):hover {
+    background: #202020;
+}
+.nav-item.active {
+    border-left-color: #0088ff;
+    background: #222222;
+}
+
+#home .title {
+    color: #fff;
+    text-align:center;
+    font-size: 2.5rem;
+    font-weight:lighter;
+    letter-spacing:0.1em;
+    margin-bottom: .5em;
+}
+
+#home .content {
+    height: 200px;
+    position:relative;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+#home .sub-text {
+    color: #fff;
+    font-weight: lighter;
+    text-align:center;
+    font-size:1.1rem;
+    margin-top: 2.15em;
+}
+
+.get-started {
+    position:absolute;
+    bottom: 20px;
+    width:150px;
+    height:40px;
+    background: transparent;
+    border: 1px solid #0088ff;
+    border-radius:5px;
+    left:50%;
+    transform:translateX(-50%);
+    color: #0088ff;
+    text-transform: uppercase;
+    transition:.3s ease-in-out;
+    cursor: pointer;
+}
+
+.get-started:hover {
+    background: #0088ff;
+    color: #fff;
+}
+
+.time-grid {
+    width: 60vw;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5em;
+}
+
+.timezone {
+    width:62.5%;
+    text-align:center;
+    color: white;
+    margin:0 auto;
+}
+
+.timezone .flag {
+    width:100%;
+    position: relative;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.timezone .name {
+    font-weight:lighter;
+    font-size: 1.15rem;
+    padding: .5em 0;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>World Clock</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="times.js"></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h1 class="brand">
+            World Clock
+        </h1>
+        <ul class="nav-list">
+            <li class="nav-item active" data-page="home">
+                Home
+            </li>
+            <li class="nav-item" data-page="asia">
+                Asia
+            </li>
+            <li class="nav-item" data-page="africa">
+                Africa
+            </li>
+            <li class="nav-item" data-page="america">
+                America
+            </li>
+            <li class="nav-item" data-page="europe">
+                Europe
+            </li>
+        </ul>
+    </div>
+
+    <div class="pane active" id="home">
+        <div class="content">
+            <h1 class="title home-title">Welcome To World Clock</h1>
+            <p class="sub-text">This Application allows you to see different times around the globe.</p>
+            <button class="get-started">Get Started</button>
+        </div>
+    </div>
+    <div class="pane" id="asia">
+        <h1 class="title">Asia</h1>
+        <div class="time-grid">
+            <div class="timezone">
+                <img src="./flags/japan.png" alt="Japanese flag" class="flag">
+                <h2 class="name">Tokyo (<span class="country-output" id="japan-output-1"></span>)</h2>
+                <p class="time" id="japan-output-2"></p>
+            </div>
+            <div class="timezone">
+                <img src="./flags/vietnam.png" alt="" class="flag">
+                <h2 class="name">Ho Chi Minh (<span class="country-output" id="vietnam-output-1"></span>)
+                </h2>
+                <p class="time" id="vietnam-output-2"></p>
+            </div>
+            <div class="timezone">
+                <img src="./flags/southkorea.png" alt="" class="flag">
+                <h2 class="name">Seoul (<span class="country-output" id="southkorea-output-1"></span>)</h2>
+                <p class="time" id="southkorea-output-2"></p>
+            </div>
+            <div class="timezone">
+                <img src="./flags/china.png" alt="" class="flag">
+                <h2 class="name">Shanghai (<span class="country-output" id="china-output-1"></span>)</h2>
+                <p class="time" id="china-output-2"></p>
+            </div>
+        </div>
+    </div>
+    <div class="pane" id="africa">
+        <h1 class="title">Africa</h1>
+    </div>
+    <div class="pane" id="america">
+        <h1 class="title">America</h1>
+    </div>
+    <div class="pane" id="europe">
+        <h1 class="title">Europe</h1>
+    </div>
+
+    <script>
+        // Tab System
+        let navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelector('.nav-item.active').classList.remove('active');
+                item.classList.add('active');
+                document.querySelector('.pane.active').classList.remove('active');
+                document.querySelector(`#${item.getAttribute('data-page')}`).classList.add('active');
+            })
+        });
+    </script>
+</body>
+
+</html>
