@@ -1,7 +1,7 @@
 {
-  "name": "first-practice",
+  "name": "world-clock",
   "version": "1.0.0",
-  "description": "My first practice with electron",
+  "description": "Desktop app thats shows times around the world",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
