@@ -18,7 +18,7 @@
             <li class="nav-item active" data-page="home">
                 Home
             </li>
-            <li class="nav-item" data-page="asia">
+            <li class="nav-item asia" data-page="asia">
                 Asia
             </li>
             <li class="nav-item" data-page="africa">
@@ -68,6 +68,29 @@
     </div>
     <div class="pane" id="africa">
         <h1 class="title">Africa</h1>
+        <div class="time-grid">
+            <div class="timezone">
+                <img src="./flags/ghana.png" alt="Ghana flag" class="flag">
+                <h2 class="name">Accra (<span class="country-output" id="ghana-output-1"></span>)</h2>
+                <p class="time" id="ghana-output-2"></p>
+            </div>
+            <div class="timezone">
+                <img src="./flags/kenya.png" alt="Kenya Flag" class="flag">
+                <h2 class="name">Nairobi (<span class="country-output" id="kenya-output-1"></span>)
+                </h2>
+                <p class="time" id="kenya-output-2"></p>
+            </div>
+            <div class="timezone">
+                <img src="./flags/southafrica.png" alt="South Africa Flag" class="flag">
+                <h2 class="name">Johannesburg (<span class="country-output" id="southafrica-output-1"></span>)</h2>
+                <p class="time" id="southafrica-output-2"></p>
+            </div>
+            <div class="timezone">
+                <img src="./flags/ivorycoast.png" alt="Ivory Coast Flag" class="flag">
+                <h2 class="name">Abidjan (<span class="country-output" id="ivorycoast-output-1"></span>)</h2>
+                <p class="time" id="ivorycoast-output-2"></p>
+            </div>
+        </div>
     </div>
     <div class="pane" id="america">
         <h1 class="title">America</h1>
@@ -87,6 +110,14 @@
                 document.querySelector(`#${item.getAttribute('data-page')}`).classList.add('active');
             })
         });
+
+        let getStarted = document.querySelector('.get-started');
+        getStarted.addEventListener('click', () => {
+            document.querySelector('.nav-item.active').classList.remove('active');
+            document.querySelector('.nav-item.asia').classList.add('active');
+            document.querySelector('.pane.active').classList.remove('active');
+            document.querySelector('#asia').classList.add('active');
+        })
     </script>
 </body>
 
